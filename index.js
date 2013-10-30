@@ -290,7 +290,7 @@ Browserify.prototype.deps = function (opts) {
                 id: row.id,
                 exposed: self._expose[row.id],
                 deps: {},
-                source: 'module.exports=require(\'' + hash(row.id) + '\');'
+                source: opts.debug ? row.source : 'module.exports=require(\'' + hash(row.id) + '\');'
             });
         }
         
